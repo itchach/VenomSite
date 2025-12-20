@@ -33,6 +33,7 @@ body {
     z-index: 9999;
     transition: right 0.3s ease, opacity 0.3s ease; /* added opacity transition */
     opacity: 0.3; /* low opacity for peek */
+    z-index: 999999999;
 }
 
 /* Fully slide in and visible on hover */
@@ -50,6 +51,7 @@ body {
     text-decoration: none;
     font-weight: bold;
     transition: background 0.3s;
+    z-index: 9999999999;
 }
 
 .main-nav .nav-btn:hover {
