@@ -1,20 +1,6 @@
 
 
 
-const nav = document.getElementById('mainNav');
-
-nav.addEventListener('mouseleave', () => {
-    nav.style.right = '-4rem'; // hide when mouse leaves
-});
-
-nav.addEventListener('mouseenter', () => {
-    nav.style.right = '0'; // fully show when mouse enters
-});
-
-
-    
-
-
 
 
 const title = document.getElementById('title');
@@ -1233,3 +1219,26 @@ enterBtn.addEventListener('click', () => {
 });
 
 
+    const tooltip = document.getElementById("tooltip");
+    const navButtons = document.querySelectorAll(".nav-btn");
+
+    navButtons.forEach(btn => {
+    btn.addEventListener("mouseenter", () => {
+        tooltip.innerText = btn.dataset.label;
+        tooltip.style.opacity = 1;
+
+        const rect = btn.getBoundingClientRect();
+        tooltip.style.top = `${rect.top + rect.height / 2}px`;
+        tooltip.style.left = `${rect.left - tooltip.offsetWidth - 8}px`;
+    });
+
+    btn.addEventListener("mousemove", () => {
+        const rect = btn.getBoundingClientRect();
+        tooltip.style.top = `${rect.top + rect.height / 2}px`;
+        tooltip.style.left = `${rect.left - tooltip.offsetWidth - 8}px`;
+    });
+
+    btn.addEventListener("mouseleave", () => {
+        tooltip.style.opacity = 0;
+    });
+    });
