@@ -1242,3 +1242,11 @@ enterBtn.addEventListener('click', () => {
         tooltip.style.opacity = 0;
     });
     });
+
+    const coverp = document.getElementById('cover');
+const enterBtnp = document.querySelector('#cover .enter-btn');
+
+enterBtnp.addEventListener('click', () => {
+    coverp.style.display = 'none';          // hide cover
+    document.body.classList.add('cover-hidden'); // reveal nav
+});
